@@ -55,3 +55,8 @@ lto = "thin"
 incremental = true
 debug-assertions = true
 debug = true
+
+[patch.crates-io]
+ark-ff = { git = "https://github.com/cysic-labs/algebra", branch = "zprize2023" }
+ark-ec = { git = "https://github.com/cysic-labs/algebra", branch = "zprize2023" }
+ark-serialize = { git = "https://github.com/cysic-labs/algebra", branch = "zprize2023" }

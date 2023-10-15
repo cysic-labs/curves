@@ -5,7 +5,7 @@ use ark_ff::{
     One, Zero,
 };
 use ark_serialize::CanonicalSerialize;
-use ark_std::rand::Rng;
+use ark_std::{rand::Rng, UniformRand};
 use ark_std::test_rng;
 use core::ops::{AddAssign, MulAssign};
 
@@ -115,3 +115,12 @@ fn test_g1_generator_raw() {
         x.add_assign(&Fq::one());
     }
 }
+
+#[test]
+    fn test_hardware_point_add() {
+        let mut rng = ark_std::test_rng();
+
+        let a_proj = G1Projective::rand(&mut rng);
+        let b_proj = G1Projective::rand(&mut rng);
+        let _c_proj = a_proj + b_proj;
+    }
